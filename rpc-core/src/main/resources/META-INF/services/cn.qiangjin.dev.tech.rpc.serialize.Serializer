@@ -1,0 +1,3 @@
+cn.qiangjin.dev.tech.rpc.serialize.impl.StringSerializer
+cn.qiangjin.dev.tech.rpc.serialize.impl.MetadataSerializer
+cn.qiangjin.dev.tech.rpc.serialize.impl.RpcRequestSerializer
