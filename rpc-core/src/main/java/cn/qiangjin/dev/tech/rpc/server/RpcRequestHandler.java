@@ -23,7 +23,7 @@ import java.util.Map;
 public class RpcRequestHandler implements RequestHandler, ServiceProviderRegistry {
 
     private final static Logger logger = LoggerFactory.getLogger(RpcRequestHandler.class);
-    /** key-service name, value - service provider */
+    /** key - service name, value - service provider */
     private final Map<String, Object> serviceProviders = new HashMap<>();
 
     /**

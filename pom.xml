@@ -19,9 +19,8 @@
     <modules>
         <module>rpc-core</module>
         <module>rpc-api</module>
-        <module>example-client</module>
-        <module>example-server</module>
-        <module>example-server-api</module>
+        <module>example-provider-serv</module>
+        <module>example-consumer-serv</module>
     </modules>
 
     <properties>

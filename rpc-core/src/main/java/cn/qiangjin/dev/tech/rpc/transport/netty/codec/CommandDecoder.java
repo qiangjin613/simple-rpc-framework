@@ -37,5 +37,5 @@ public abstract class CommandDecoder extends ByteToMessageDecoder {
         out.add(new Command(header, payload));
     }
 
-    protected abstract Header decodeHeader(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf) ;
+    protected abstract Header decodeHeader(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf);
 }
