@@ -47,6 +47,9 @@ public class NettyClient implements TransportClient {
         return new NettyTransport(createChannel(address, connectionTimeout), inFlightRequests);
     }
 
+    /**
+     * 启动 NettyClient，返回 channel
+     */
     private synchronized Channel createChannel(SocketAddress address, long connectionTimeout) throws InterruptedException, TimeoutException {
         if (address == null) {
             throw new IllegalArgumentException("address must not be null!");

@@ -19,11 +19,8 @@ public class Server {
     private static final Logger logger = LoggerFactory.getLogger(Server.class);
 
     public static void main(String[] args) throws Exception {
-        String serviceName = HelloService.class.getCanonicalName();
-
         File tmpDirFile = new File(System.getProperty("java.io.tmpdir"));
         File file = new File(tmpDirFile, "simple_rpc_name_service.data");
-        HelloServiceImpl helloService = new HelloServiceImpl();
 
         logger.info("创建并启动 RpcAccessPoint...");
         try (
@@ -32,6 +29,9 @@ public class Server {
         ){
             NameService nameService = rpcAccessPoint.getNameService(file.toURI());
             assert nameService != null;
+
+            String serviceName = HelloService.class.getCanonicalName();
+            HelloServiceImpl helloService = new HelloServiceImpl();
             logger.info("向 RpcAccessPoint 注册 {} 服务...", serviceName);
             URI uri = rpcAccessPoint.addServiceProvider(helloService, HelloService.class);
             logger.info("服务名: {}, 向 NameService 注册...", serviceName);

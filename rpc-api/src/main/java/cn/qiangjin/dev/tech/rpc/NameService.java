@@ -12,7 +12,7 @@ import java.util.Collection;
 public interface NameService {
 
     /**
-     * 注册服务
+     * （Provider）注册服务
      *
      * @param serviceName 服务名称
      * @param uri 服务地址
@@ -20,7 +20,7 @@ public interface NameService {
     void registerService(String serviceName, URI uri) throws IOException;
 
     /**
-     * 查询服务地址
+     * （Consumer）查询服务地址
      *
      * @param serviceName 服务名称
      * @return 服务地址
@@ -35,7 +35,7 @@ public interface NameService {
     void connect(URI nameServiceUri);
 
     /**
-     * 获取所有支持的协议
+     * 获取支持的协议
      */
     Collection<String> supportedSchemes();
 }

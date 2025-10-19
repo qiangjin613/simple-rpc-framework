@@ -25,6 +25,7 @@ public class ResponseInvocation extends SimpleChannelInboundHandler<Command> {
     protected void channelRead0(ChannelHandlerContext ctx, Command response) {
         ResponseFuture future = inFlightRequests.remove(response.getHeader().getRequestId());
         if(null != future) {
+            // 将读取的结果写入之前存入的 CompletableFuture 中
             future.getFuture().complete(response);
         } else {
             logger.warn("Drop response: {}", response);

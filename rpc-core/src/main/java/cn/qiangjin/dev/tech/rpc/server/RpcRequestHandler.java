@@ -17,13 +17,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 处理 RPC 请求，通过 Java Reflect 调用方法，并像对端返回执行结果
+ *
+ * @see cn.qiangjin.dev.tech.rpc.client.stub.RpcRequest
  * @author <a href="mailto:qiangjin613@163.com">qiangjin</a>
  */
 @Singleton
 public class RpcRequestHandler implements RequestHandler, ServiceProviderRegistry {
 
     private final static Logger logger = LoggerFactory.getLogger(RpcRequestHandler.class);
-    /** key - service name, value - service provider */
+    /** key - service name, value - service provider，具体实现类 */
     private final Map<String, Object> serviceProviders = new HashMap<>();
 
     /**

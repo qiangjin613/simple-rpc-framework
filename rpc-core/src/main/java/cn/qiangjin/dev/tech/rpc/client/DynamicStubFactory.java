@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 /**
+ * 使用 String 生成远程访问代理类
+ *
  * @author <a href="mailto:qiangjin613@163.com">qiangjin</a>
  */
 public class DynamicStubFactory implements StubFactory {
@@ -33,6 +35,9 @@ public class DynamicStubFactory implements StubFactory {
             "    }\n" +
             "}";
 
+    /**
+     * 生成 ServiceClass 代理类
+     */
     @Override
     public <T> T createStub(Transport transport, Class<T> serviceClass) {
         // 填充模板、生成 .java 源码

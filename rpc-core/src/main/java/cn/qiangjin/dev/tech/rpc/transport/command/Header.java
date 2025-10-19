@@ -5,7 +5,7 @@ package cn.qiangjin.dev.tech.rpc.transport.command;
  */
 public class Header {
 
-    /** 唯一标识一个请求命令，在我们使用双工方式异步收发数据的时候，这个 requestId 可以用于请求和响应的配对。 */
+    /** （响应分发）唯一标识一个请求命令，在我们使用双工方式异步收发数据的时候，这个 requestId 可以用于请求和响应的配对。 */
     private int requestId;
     /**
      * 命令的版本号（或者说是传输协议的版本号，它不等同于程序的版本号）

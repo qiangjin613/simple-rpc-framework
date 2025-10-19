@@ -27,7 +27,9 @@ public abstract class AbstractStub implements ServiceStub {
         byte[] payload = SerializeSupport.serialize(request);
         Command requestCommand = new Command(header, payload);
         try {
-            Command responseCommand = transport.send(requestCommand).get(5, TimeUnit.SECONDS);
+            // 异步 转 同步，5s 超时
+            Command responseCommand = transport.send(requestCommand)
+                    .get(5, TimeUnit.SECONDS);
             ResponseHeader responseHeader = (ResponseHeader) responseCommand.getHeader();
             if (responseHeader.getCode() == Code.SUCCESS.getCode()) {
                 return responseCommand.getPayload();
