@@ -1,1 +1,3 @@
+cn.qiangjin.dev.tech.rpc.client.CGlibStubFactory
+cn.qiangjin.dev.tech.rpc.client.JdkStubFactory
 cn.qiangjin.dev.tech.rpc.client.DynamicStubFactory

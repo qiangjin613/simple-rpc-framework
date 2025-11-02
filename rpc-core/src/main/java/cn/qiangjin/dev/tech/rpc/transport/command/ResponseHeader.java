@@ -14,7 +14,7 @@ public class ResponseHeader extends Header {
     /** 响应的错误信息 */
     private String error;
 
-    public ResponseHeader(int type, int version, int requestId,  Throwable throwable) {
+    public ResponseHeader(int type, int version, int requestId, Throwable throwable) {
         this(type, version, requestId, Code.UNKNOWN_ERROR.getCode(), throwable.getMessage());
     }
 

@@ -29,7 +29,7 @@ public abstract class AbstractStub implements ServiceStub {
         try {
             // 异步 转 同步，5s 超时
             Command responseCommand = transport.send(requestCommand)
-                    .get(5, TimeUnit.SECONDS);
+                    .get(50, TimeUnit.SECONDS);
             ResponseHeader responseHeader = (ResponseHeader) responseCommand.getHeader();
             if (responseHeader.getCode() == Code.SUCCESS.getCode()) {
                 return responseCommand.getPayload();

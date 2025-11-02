@@ -25,10 +25,10 @@ public class Header {
 
     public Header() {}
 
-    public Header(int requestId, int version, int type) {
-        this.requestId = requestId;
-        this.version = version;
+    public Header(int type, int version, int requestId) {
         this.type = type;
+        this.version = version;
+        this.requestId = requestId;
     }
 
     public int getRequestId() {
